@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="content-band article-page">
+  <div class="container prose">
+    {% if category %}
+      <p class="eyebrow">{{ category }}</p>
+    {% endif %}
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </div>
+</article>

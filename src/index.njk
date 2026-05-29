@@ -1,0 +1,132 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Theme Park Maps Through Time</h1>
+      <p>Explore detailed maps from the world's best theme parks from different years.</p>
+      <div class="hero-search-wrapper">
+        <span class="search-icon">
+          <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </span>
+        <input type="text" placeholder="Search for a park..." class="hero-search-input" data-hero-search-input>
+        <button class="hero-search-btn" data-hero-search-btn>Explore Maps</button>
+      </div>
+    </div>
+    <div class="hero-showcase" aria-label="Featured illustrated map">
+      <div class="hero-card">
+        <img src="/assets/img/hero-map.png" alt="Illustrated theme park map showing rides, rollercoasters and paths">
+        <div class="year-switcher" aria-label="Browse map years">
+          <a href="/years/#1980s">1985</a>
+          <a href="/years/#1990s">1995</a>
+          <a href="/years/#2000s">2005</a>
+          <a href="/years/#2010s">2015</a>
+          <a class="is-selected" href="/years/#2020s">2024</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-band">
+  <div class="container">
+    {% set heading = "Popular Parks" %}
+    {% set ctaUrl = "/parks/" %}
+    {% set ctaLabel = "View All Parks" %}
+    {% include "section-header.njk" %}
+    <div class="park-grid">
+      {% for park in parks %}
+        <article class="park-card">
+          <a href="/parks/#{{ park.slug }}">
+            <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
+            <h3>{{ park.name }}</h3>
+            <p>{{ park.count }} maps</p>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="content-band tight">
+  <div class="container">
+    {% set heading = "Browse Maps by Year" %}
+    {% set ctaUrl = "/years/" %}
+    {% set ctaLabel = "View All Years" %}
+    {% include "section-header.njk" %}
+    <div class="year-grid">
+      {% for year in years %}
+        <a href="{{ year.url }}" class="year-card">
+          <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+          <div>
+            <span>{{ year.decade }}</span>
+            <small>{{ year.count }} maps</small>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="content-band split-band">
+  <div class="container split-layout">
+    <div>
+      {% set heading = "Latest Maps Added" %}
+      {% set ctaUrl = "/maps/" %}
+      {% set ctaLabel = "View All Maps" %}
+      {% include "section-header.njk" %}
+      <div class="list-panel">
+        {% for map in maps | limit(3) %}
+          <article class="map-row">
+            <img src="{{ map.image }}" alt="{{ map.title }} map placeholder">
+            <div>
+              <h3>{{ map.title }}</h3>
+              <p><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg> Added {{ map.added }}</p>
+            </div>
+            <span>{{ map.year }}</span>
+          </article>
+        {% endfor %}
+      </div>
+      <a class="wide-button" href="/maps/">Browse All Maps</a>
+    </div>
+
+    <div>
+      {% set heading = "From the Blog" %}
+      {% set ctaUrl = "/blog/" %}
+      {% set ctaLabel = "View All Posts" %}
+      {% include "section-header.njk" %}
+      <div class="list-panel">
+        {% for post in collections.posts | limit(3) %}
+          <article class="post-row">
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }} placeholder image">
+            <div>
+              <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+              <p>{{ post.date | dateDisplay }} <span>&middot;</span> <a href="/blog/">{{ post.data.category }}</a></p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter-bar">
+  <div class="container newsletter-inner">
+    <div class="newsletter-intro">
+      <span class="newsletter-icon">
+        <svg class="icon" aria-hidden="true"><use href="#icon-mail"></use></svg>
+      </span>
+      <div class="newsletter-text">
+        <h3>Stay Up To Date!</h3>
+        <p>Subscribe to get notified when new maps and blog posts are added.</p>
+      </div>
+    </div>
+    <form class="newsletter-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+      <input type="email" placeholder="Enter your email..." class="newsletter-input" required>
+      <button type="submit" class="newsletter-btn">Subscribe</button>
+    </form>
+  </div>
+</section>

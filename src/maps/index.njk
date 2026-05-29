@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+title: Maps
+description: Browse theme park maps by park, year, and era.
+---
+
+<section class="page-hero compact-hero">
+  <div class="container">
+    <h1>Maps Archive</h1>
+    <p>Browse placeholder entries for the growing archive. Swap in scans, photos, and notes as your collection grows.</p>
+  </div>
+</section>
+
+<section class="content-band">
+  <div class="container">
+    <div style="margin-bottom: 40px; display: flex; justify-content: center;">
+      <div class="hero-search-wrapper" style="box-shadow: var(--shadow-md); border: 1px solid rgba(8, 119, 242, 0.08); max-width: 500px;">
+        <span class="search-icon">
+          <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </span>
+        <input type="text" placeholder="Search for a park, map, or year..." class="hero-search-input" data-filter-input>
+      </div>
+    </div>
+
+    <div class="map-grid" data-filter-list>
+      {% for map in maps %}
+        <article class="map-card" data-filter-item="{{ map.title }} {{ map.park }} {{ map.year }} {{ map.decade }}">
+          <img src="{{ map.image }}" alt="{{ map.title }} placeholder scan">
+          <div>
+            <span class="eyebrow">{{ map.tag }}</span>
+            <h2>{{ map.title }}</h2>
+            <p>{{ map.park }} • {{ map.year }}</p>
+            <a href="/parks/#{{ map.parkSlug }}">View park</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

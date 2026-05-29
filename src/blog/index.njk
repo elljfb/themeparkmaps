@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: Articles about theme park maps, entertainment history, and collecting.
+---
+
+<section class="page-hero compact-hero">
+  <div class="container">
+    <h1>From the Blog</h1>
+    <p>Notes on park history, entertainment design, collecting, and the odd little details hidden in old guide maps.</p>
+  </div>
+</section>
+
+<section class="content-band">
+  <div class="container blog-grid">
+    {% for post in collections.posts %}
+      <article class="blog-card">
+        <img src="{{ post.data.image }}" alt="{{ post.data.title }} placeholder image">
+        <div>
+          <span class="eyebrow">{{ post.data.category }}</span>
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+          <p>{{ post.data.excerpt }}</p>
+          <small>{{ post.date | dateDisplay }}</small>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

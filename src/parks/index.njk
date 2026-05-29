@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+title: Parks
+description: Browse theme park map collections by destination.
+---
+
+<section class="page-hero compact-hero">
+  <div class="container">
+    <h1>Popular Parks</h1>
+    <p>Start with the parks that defined eras of paper guide maps, holiday planning, and walk-through-the-turnstiles nostalgia.</p>
+  </div>
+</section>
+
+<section class="content-band">
+  <div class="container park-directory">
+    {% for park in parks %}
+      <article class="park-feature" id="{{ park.slug }}">
+        <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
+        <div>
+          <span class="eyebrow">{{ park.location }}</span>
+          <h2>{{ park.name }}</h2>
+          <p>{{ park.summary }}</p>
+          <a class="mini-button" href="/maps/">Browse {{ park.count }} maps</a>
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+layout: layouts/base.njk
+title: Years
+description: Browse theme park maps by decade.
+---
+
+<section class="page-hero compact-hero">
+  <div class="container">
+    <h1>Browse by Year</h1>
+    <p>Follow how park design, branding, attractions, and illustration styles changed from decade to decade.</p>
+  </div>
+</section>
+
+<section class="content-band">
+  <div class="container year-directory">
+    {% for year in years %}
+      <section class="decade-panel" id="{{ year.decade }}">
+        <div>
+          <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+          <h2>{{ year.decade }}</h2>
+          <p>{{ year.count }} maps currently planned for this era.</p>
+        </div>
+        <div class="mini-map-list">
+          {% for map in maps %}
+            {% if map.decade == year.decade %}
+              <a href="/maps/">
+                <img src="{{ map.image }}" alt="{{ map.title }} placeholder">
+                <span>{{ map.title }}</span>
+                <small>{{ map.year }}</small>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+</section>
