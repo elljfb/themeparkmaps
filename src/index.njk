@@ -38,7 +38,7 @@ title: Home
     {% set ctaLabel = "View All Parks" %}
     {% include "section-header.njk" %}
     <div class="park-grid">
-      {% for park in parks %}
+      {% for park in collections.parks %}
         <article class="park-card">
           <a href="/parks/#{{ park.slug }}">
             <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
@@ -58,7 +58,7 @@ title: Home
     {% set ctaLabel = "View All Years" %}
     {% include "section-header.njk" %}
     <div class="year-grid">
-      {% for year in years %}
+      {% for year in collections.years %}
         <a href="{{ year.url }}" class="year-card">
           <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
           <div>
@@ -79,15 +79,15 @@ title: Home
       {% set ctaLabel = "View All Maps" %}
       {% include "section-header.njk" %}
       <div class="list-panel">
-        {% for map in maps | limit(3) %}
-          <article class="map-row">
-            <img src="{{ map.image }}" alt="{{ map.title }} map placeholder">
+        {% for map in collections.maps | limit(3) %}
+          <a class="map-row" href="{{ map.url }}">
+            <img src="{{ map.data.image }}" alt="{{ map.data.title }} map placeholder">
             <div>
-              <h3>{{ map.title }}</h3>
-              <p><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg> Added {{ map.added }}</p>
+              <h3>{{ map.data.title }}</h3>
+              <p><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg> Added {{ map.date | dateDisplay }}</p>
             </div>
-            <span>{{ map.year }}</span>
-          </article>
+            <span>{{ map.data.year }}</span>
+          </a>
         {% endfor %}
       </div>
       <a class="wide-button" href="/maps/">Browse All Maps</a>

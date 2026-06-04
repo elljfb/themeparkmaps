@@ -1,0 +1,56 @@
+---
+layout: layouts/base.njk
+---
+
+<article class="blog-post-article">
+  <header class="blog-post-header">
+    <div class="container prose">
+      {% if tag %}
+        <span class="eyebrow">{{ tag }}</span>
+      {% endif %}
+      <h1>{{ title }}</h1>
+      <p class="blog-post-meta">Park: <a href="/parks/#{{ parkSlug }}">{{ park }}</a> &middot; Year: {{ year }}</p>
+    </div>
+  </header>
+  
+  {% if image %}
+    <div class="container blog-post-featured-image-wrapper">
+      <img src="{{ image }}" alt="{{ title }} scan" class="blog-post-featured-image">
+    </div>
+  {% endif %}
+
+  <div class="container prose blog-post-content">
+    {{ content | safe }}
+  </div>
+</article>
+
+<section class="content-band related-posts">
+  <div class="container">
+    <div class="section-header">
+      <h2>Explore More Maps</h2>
+      <a href="/maps/" class="text-link">
+        View All Maps
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+      </a>
+    </div>
+    <div class="map-grid">
+      {% for map in collections.maps | limit(4) %}
+        {% if map.url != page.url %}
+          <article class="map-card">
+            <a href="{{ map.url }}">
+              <div class="map-card-image-wrapper">
+                <img src="{{ map.data.image }}" alt="{{ map.data.title }} placeholder scan">
+                <span class="map-card-year">{{ map.data.year }}</span>
+              </div>
+              <div class="map-card-content">
+                <span class="eyebrow">{{ map.data.tag }}</span>
+                <h3>{{ map.data.title }}</h3>
+                <p>{{ map.data.park }}</p>
+              </div>
+            </a>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

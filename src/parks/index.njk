@@ -12,16 +12,21 @@ description: Browse theme park map collections by destination.
 </section>
 
 <section class="content-band">
-  <div class="container park-directory">
+  <div class="container park-directory-grid">
     {% for park in parks %}
-      <article class="park-feature" id="{{ park.slug }}">
-        <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
-        <div>
-          <span class="eyebrow">{{ park.location }}</span>
-          <h2>{{ park.name }}</h2>
-          <p>{{ park.summary }}</p>
-          <a class="mini-button" href="/maps/">Browse {{ park.count }} maps</a>
-        </div>
+      <article class="park-directory-card" id="{{ park.slug }}">
+        <a href="/maps/">
+          <div class="park-card-image-wrapper">
+            <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
+            <span class="park-card-count">{{ park.count }} maps</span>
+          </div>
+          <div class="park-card-content">
+            <span class="eyebrow">{{ park.location }}</span>
+            <h2>{{ park.name }}</h2>
+            <p>{{ park.summary }}</p>
+            <span class="park-card-btn">Browse Maps</span>
+          </div>
+        </a>
       </article>
     {% endfor %}
   </div>

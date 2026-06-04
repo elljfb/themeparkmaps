@@ -23,15 +23,19 @@ description: Browse theme park maps by park, year, and era.
     </div>
 
     <div class="map-grid" data-filter-list>
-      {% for map in maps %}
-        <article class="map-card" data-filter-item="{{ map.title }} {{ map.park }} {{ map.year }} {{ map.decade }}">
-          <img src="{{ map.image }}" alt="{{ map.title }} placeholder scan">
-          <div>
-            <span class="eyebrow">{{ map.tag }}</span>
-            <h2>{{ map.title }}</h2>
-            <p>{{ map.park }} • {{ map.year }}</p>
-            <a href="/parks/#{{ map.parkSlug }}">View park</a>
-          </div>
+      {% for map in collections.maps %}
+        <article class="map-card" data-filter-item="{{ map.data.title }} {{ map.data.park }} {{ map.data.year }} {{ map.data.decade }}">
+          <a href="{{ map.url }}">
+            <div class="map-card-image-wrapper">
+              <img src="{{ map.data.image }}" alt="{{ map.data.title }} placeholder scan">
+              <span class="map-card-year">{{ map.data.year }}</span>
+            </div>
+            <div class="map-card-content">
+              <span class="eyebrow">{{ map.data.tag }}</span>
+              <h3>{{ map.data.title }}</h3>
+              <p>{{ map.data.park }}</p>
+            </div>
+          </a>
         </article>
       {% endfor %}
     </div>

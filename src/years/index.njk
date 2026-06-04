@@ -13,21 +13,27 @@ description: Browse theme park maps by decade.
 
 <section class="content-band">
   <div class="container year-directory">
-    {% for year in years %}
+    {% for year in collections.years %}
       <section class="decade-panel" id="{{ year.decade }}">
-        <div>
+        <div class="decade-info">
           <svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
           <h2>{{ year.decade }}</h2>
           <p>{{ year.count }} maps currently planned for this era.</p>
         </div>
-        <div class="mini-map-list">
-          {% for map in maps %}
-            {% if map.decade == year.decade %}
-              <a href="/maps/">
-                <img src="{{ map.image }}" alt="{{ map.title }} placeholder">
-                <span>{{ map.title }}</span>
-                <small>{{ map.year }}</small>
-              </a>
+        <div class="mini-map-grid">
+          {% for map in collections.maps %}
+            {% if map.data.decade == year.decade %}
+              <article class="map-card mini-map-card">
+                <a href="{{ map.url }}">
+                  <div class="map-card-image-wrapper">
+                    <img src="{{ map.data.image }}" alt="{{ map.data.title }} placeholder">
+                    <span class="map-card-year">{{ map.data.year }}</span>
+                  </div>
+                  <div class="map-card-content">
+                    <h3>{{ map.data.title }}</h3>
+                  </div>
+                </a>
+              </article>
             {% endif %}
           {% endfor %}
         </div>

@@ -24,6 +24,37 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("maps", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/maps/*.md").sort((a, b) => {
+      return b.date - a.date;
+    });
+  });
+
+  eleventyConfig.addCollection("parks", function (collectionApi) {
+    const maps = collectionApi.getFilteredByGlob("./src/maps/*.md");
+    const parksData = require("./src/_data/parks-base.js");
+    return parksData.map(park => {
+      const count = maps.filter(map => map.data.parkSlug === park.slug).length;
+      return {
+        ...park,
+        count
+      };
+    });
+  });
+
+  eleventyConfig.addCollection("years", function (collectionApi) {
+    const maps = collectionApi.getFilteredByGlob("./src/maps/*.md");
+    const decades = ["1980s", "1990s", "2000s", "2010s", "2020s"];
+    return decades.map(decade => {
+      const count = maps.filter(map => map.data.decade === decade).length;
+      return {
+        decade,
+        count,
+        url: `/years/#${decade}`
+      };
+    });
+  });
+
   return {
     dir: {
       input: "src",

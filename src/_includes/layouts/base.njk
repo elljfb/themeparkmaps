@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
-    <meta name="description" content="{{ description or site.description }}">
+    <meta name="description" content="{{ description or excerpt or site.description }}">
     <link rel="icon" href="/assets/img/themeparkmaps-whitebg.jpg">
     <!-- Google Fonts for premium design -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,8 +76,8 @@
         <div>
           <h2>Information</h2>
           <a href="/about/">About Us</a>
-          <a href="mailto:{{ site.email }}">Contact</a>
-          <a href="/about/#faq">FAQ</a>
+          <a href="/contact/">Contact Us</a>
+          <a href="/faq/">FAQ</a>
           <a href="/sitemap.xml">Sitemap</a>
         </div>
         <div>

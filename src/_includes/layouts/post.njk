@@ -2,12 +2,55 @@
 layout: layouts/base.njk
 ---
 
-<article class="content-band article-page">
-  <div class="container prose">
-    {% if category %}
-      <p class="eyebrow">{{ category }}</p>
-    {% endif %}
-    <h1>{{ title }}</h1>
+<article class="blog-post-article">
+  <header class="blog-post-header">
+    <div class="container prose">
+      {% if category %}
+        <span class="eyebrow">{{ category }}</span>
+      {% endif %}
+      <h1>{{ title }}</h1>
+      <p class="blog-post-meta">Published on {{ date | dateDisplay }}</p>
+    </div>
+  </header>
+  
+  {% if image %}
+    <div class="container blog-post-featured-image-wrapper">
+      <img src="{{ image }}" alt="{{ title }} featured image" class="blog-post-featured-image">
+    </div>
+  {% endif %}
+
+  <div class="container prose blog-post-content">
     {{ content | safe }}
   </div>
 </article>
+
+<section class="content-band related-posts">
+  <div class="container">
+    <div class="section-header">
+      <h2>More from the Blog</h2>
+      <a href="/blog/" class="text-link">
+        View All Posts
+        <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg>
+      </a>
+    </div>
+    <div class="blog-grid">
+      {% for post in collections.posts | limit(4) %}
+        {% if post.url != page.url %}
+          <article class="blog-card">
+            <a href="{{ post.url }}">
+              <div class="blog-card-image-wrapper">
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }} placeholder image">
+                <span class="blog-card-category">{{ post.data.category }}</span>
+              </div>
+              <div class="blog-card-content">
+                <h2>{{ post.data.title }}</h2>
+                <p>{{ post.data.excerpt }}</p>
+                <small><svg class="icon" aria-hidden="true"><use href="#icon-calendar"></use></svg> {{ post.date | dateDisplay }}</small>
+              </div>
+            </a>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
