@@ -29,6 +29,6 @@ Looking closely at the map, you can spot several legendary, extinct attractions 
 
 ### Thrills, Shows, and the Future Hollywood Studios
 
-Interspersed with these nostalgic favorites are the heavy-hitter attractions that still anchor the park today (now known as Disney's Hollywood Studios). On the right side of the map, you can spot the formidable one-two punch of Sunset Boulevard: **The Twilight Zone Tower of Terror** (Attraction 17) and the **Rock 'n' Roller Coaster Starring Aerosmith** (Attraction 16). At the bottom right, **Fantasmic!** (Attraction 18) is highlighted as the nighttime spectacular.
+Interspersed with these nostalgic favorites are the heavy-hitter attractions that still anchor the park today. On the right side of the map, you can spot the formidable one-two punch of Sunset Boulevard: **The Twilight Zone Tower of Terror** (Attraction 17) and the **Rock 'n' Roller Coaster Starring Aerosmith** (Attraction 16). At the bottom right, **Fantasmic!** (Attraction 18) is highlighted as the nighttime spectacular.
 
 Today, Disney MGM Studios is named Disney's Hollywood Studios. Ultimately, this map serves as a beautiful time capsule. It represents the exact midpoint of the park's history, long after it ceased being an active film studio, but well before it transformed into the IP-heavy lands of *Star Wars: Galaxy's Edge* and *Toy Story Land* that guests explore today.
