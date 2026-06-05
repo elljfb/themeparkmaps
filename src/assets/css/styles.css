@@ -966,6 +966,22 @@ button {
    ========================================================================== */
 
 /* Maps Page Grid & Cards */
+.category-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.category-search .hero-search-wrapper {
+  max-width: 500px;
+  border: 1px solid rgba(8, 119, 242, 0.08);
+  box-shadow: var(--shadow-md);
+}
+
+[data-filter-item].is-hidden {
+  display: none;
+}
+
 .map-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

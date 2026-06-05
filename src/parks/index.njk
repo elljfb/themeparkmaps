@@ -12,22 +12,33 @@ description: Browse theme park map collections by destination.
 </section>
 
 <section class="content-band">
-  <div class="container park-directory-grid">
-    {% for park in parks %}
-      <article class="park-directory-card" id="{{ park.slug }}">
-        <a href="/maps/">
-          <div class="park-card-image-wrapper">
-            <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
-            <span class="park-card-count">{{ park.count }} maps</span>
-          </div>
-          <div class="park-card-content">
-            <span class="eyebrow">{{ park.location }}</span>
-            <h2>{{ park.name }}</h2>
-            <p>{{ park.summary }}</p>
-            <span class="park-card-btn">Browse Maps</span>
-          </div>
-        </a>
-      </article>
-    {% endfor %}
+  <div class="container">
+    <div class="category-search">
+      <div class="hero-search-wrapper">
+        <span class="search-icon">
+          <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
+        </span>
+        <input type="text" placeholder="Search for a park or location..." class="hero-search-input" data-filter-input>
+      </div>
+    </div>
+
+    <div class="park-directory-grid" data-filter-list>
+      {% for park in collections.parks %}
+        <article class="park-directory-card" id="{{ park.slug }}" data-filter-item="{{ park.name }} {{ park.slug }} {{ park.location }} {{ park.summary }}">
+          <a href="/maps/?q={{ park.slug }}">
+            <div class="park-card-image-wrapper">
+              <img src="{{ park.hero }}" alt="{{ park.name }} image">
+              <span class="park-card-count">{{ park.count }} map{% if park.count != 1 %}s{% endif %}</span>
+            </div>
+            <div class="park-card-content">
+              <span class="eyebrow">{{ park.location }}</span>
+              <h2>{{ park.name }}</h2>
+              <p>{{ park.summary }}</p>
+              <span class="park-card-btn">Browse Maps</span>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </section>

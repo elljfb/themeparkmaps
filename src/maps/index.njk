@@ -13,8 +13,8 @@ description: Browse theme park maps by park, year, and era.
 
 <section class="content-band">
   <div class="container">
-    <div style="margin-bottom: 40px; display: flex; justify-content: center;">
-      <div class="hero-search-wrapper" style="box-shadow: var(--shadow-md); border: 1px solid rgba(8, 119, 242, 0.08); max-width: 500px;">
+    <div class="category-search">
+      <div class="hero-search-wrapper">
         <span class="search-icon">
           <svg class="icon" aria-hidden="true"><use href="#icon-search"></use></svg>
         </span>
@@ -24,7 +24,7 @@ description: Browse theme park maps by park, year, and era.
 
     <div class="map-grid" data-filter-list>
       {% for map in collections.maps %}
-        <article class="map-card" data-filter-item="{{ map.data.title }} {{ map.data.park }} {{ map.data.year }} {{ map.data.decade }}">
+        <article class="map-card" data-filter-item="{{ map.data.title }} {{ map.data.park }} {{ map.data.parkSlug }} {{ map.data.year }} {{ map.data.decade }}">
           <a href="{{ map.url }}">
             <div class="map-card-image-wrapper">
               <img src="{{ map.data.image }}" alt="{{ map.data.title }} placeholder scan">

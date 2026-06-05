@@ -46,5 +46,13 @@ module.exports = [
     hero: "/assets/img/jurassic-park.webp",
     icon: "dinosaurs",
     summary: "Explore the prehistoric world of Jurassic Park through its evolving maps and guides."
+  },
+  {
+    name: "Palma Aquarium",
+    slug: "palma-aquarium",
+    location: "Palma, Spain",
+    hero: "/assets/img/palma-aquarium.JPG",
+    icon: "fish",
+    summary: "Discover the marine wonders of Palma Aquarium through its detailed maps and guides."
   }
 ];
