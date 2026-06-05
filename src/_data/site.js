@@ -13,9 +13,7 @@ module.exports = {
     { label: "About", url: "/about/", icon: "info" }
   ],
   socials: [
-    { label: "Facebook", url: "#" },
-    { label: "X", url: "#" },
-    { label: "Instagram", url: "#" },
-    { label: "YouTube", url: "#" }
+    { label: "YouTube", url: "https://youtube.com/@themeparkmaps" },
+    { label: "TikTok", url: "https://tiktok.com/@themeparkmaps" }
   ]
 };
