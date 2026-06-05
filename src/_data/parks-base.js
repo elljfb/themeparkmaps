@@ -38,5 +38,13 @@ module.exports = [
     hero: "/assets/img/alton-towers.png",
     icon: "tower",
     summary: "UK park maps across the haunted, whimsical, and very twisty decades."
+  },
+  {
+    name: "Jurassic Park",
+    slug: "jurassic-park",
+    location: "Isla Nublar, Costa Rica",
+    hero: "/assets/img/jurassic-park.webp",
+    icon: "dinosaurs",
+    summary: "Explore the prehistoric world of Jurassic Park through its evolving maps and guides."
   }
 ];
