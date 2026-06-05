@@ -1,6 +1,6 @@
 ---
 layout: layouts/map.njk
-title: Jurassic Park
+title: Jurassic Park Brochure 1993
 park: Jurassic Park
 parkSlug: jurassic-park
 year: "1993"

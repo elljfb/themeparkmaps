@@ -1,6 +1,6 @@
 ---
 layout: layouts/map.njk
-title: Palma Aquarium
+title: Palma Aquarium Brochure 2022
 park: Palma Aquarium
 parkSlug: palma-aquarium
 year: "2022"

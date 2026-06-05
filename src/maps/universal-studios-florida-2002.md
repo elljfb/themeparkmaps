@@ -1,6 +1,6 @@
 ---
 layout: layouts/map.njk
-title: Universal Studios Florida
+title: Universal Studios Florida Map 2002
 park: Universal Studios Florida
 parkSlug: universal-studios-florida
 year: "2002"
