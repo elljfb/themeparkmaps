@@ -3,3 +3,4 @@ _site/
 .cache/
 .env
 dist/
+__pycache__/
