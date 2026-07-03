@@ -40,7 +40,7 @@ title: Home
     <div class="park-grid">
       {% for park in collections.parks %}
         <article class="park-card">
-          <a href="/parks/#{{ park.slug }}">
+          <a href="/parks/{{ park.slug }}">
             <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
             <h3>{{ park.name }}</h3>
             <p>{{ park.count }} maps</p>

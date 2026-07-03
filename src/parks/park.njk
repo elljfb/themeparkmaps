@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.parks
+  size: 1
+  alias: park
+permalink: /parks/{{ park.slug }}/
+eleventyComputed:
+  title: "{{ park.name }} Maps"
+  description: "Browse historical theme park maps, guides, and visitor materials for {{ park.name }}."
+---
+
+<section class="page-hero compact-hero">
+  <div class="container">
+    <h1>{{ park.name }}</h1>
+    <p>{{ park.location }}</p>
+  </div>
+</section>
+
+<section class="content-band">
+  <div class="container">
+    <div class="story-layout">
+      <div>
+        <h2 style="font-family: var(--font-heading); text-transform: uppercase; color: var(--navy); margin-bottom: 16px;">About The Park</h2>
+        <p style="font-size: 1.08rem; line-height: 1.6; color: var(--ink); margin-bottom: 20px;">{{ park.summary }}</p>
+        
+        <div class="year-card" style="max-width: fit-content; margin-top: 24px; box-shadow: none; border-color: rgba(8, 119, 242, 0.1); pointer-events: none;">
+          <svg class="icon" aria-hidden="true"><use href="#icon-map"></use></svg>
+          <div>
+            <span>{{ park.count }} Map{% if park.count != 1 %}s{% endif %}</span>
+            <small>Featured in Archive</small>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card" style="box-shadow: var(--shadow-md); padding: 8px;">
+          <img src="{{ park.hero }}" alt="{{ park.name }} image" style="border-radius: 20px; aspect-ratio: 1.4; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-band" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-header">
+      <h2>Maps Featured for This Park</h2>
+      <a href="/parks/" class="text-link">
+        <svg class="icon" aria-hidden="true" style="transform: rotate(180deg);"><use href="#icon-arrow"></use></svg>
+        All Parks
+      </a>
+    </div>
+
+    {% if park.count > 0 %}
+      <div class="map-grid">
+        {% for map in collections.maps %}
+          {% if map.data.parkSlug == park.slug %}
+            <article class="map-card">
+              <a href="{{ map.url }}">
+                <div class="map-card-image-wrapper">
+                  <img src="{{ map.data.image }}" alt="{{ map.data.title }} scan">
+                  <span class="map-card-year">{{ map.data.year }}</span>
+                </div>
+                <div class="map-card-content">
+                  <span class="eyebrow">{{ map.data.tag }}</span>
+                  <h3>{{ map.data.title }}</h3>
+                  <p>{{ map.data.park }}</p>
+                </div>
+              </a>
+            </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="contact-card" style="text-align: center; padding: 48px; max-width: 600px; margin: 40px auto 0;">
+        <svg class="icon" aria-hidden="true" style="width: 3rem; height: 3rem; color: var(--muted); margin-bottom: 16px;"><use href="#icon-map"></use></svg>
+        <h3 style="font-family: var(--font-heading); color: var(--navy); margin-bottom: 12px; font-size: 1.4rem;">No Maps Featured Yet</h3>
+        <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.95rem;">We don't have any maps loaded for {{ park.name }} at the moment. As soon as maps are scanned, they will appear here!</p>
+        <a href="/parks/" class="wide-button" style="margin: 0 auto;">Browse Other Parks</a>
+      </div>
+    {% endif %}
+  </div>
+</section>
