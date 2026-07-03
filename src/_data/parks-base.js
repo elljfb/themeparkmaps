@@ -24,12 +24,12 @@ module.exports = [
     summary: "Studio backlot energy, movie rides, and changing park layouts through the years."
   },
   {
-    name: "Six Flags Magic Mountain",
-    slug: "six-flags-magic-mountain",
-    location: "California, USA",
-    hero: "/assets/img/six-flags.png",
-    icon: "flag",
-    summary: "A coaster-heavy archive for one of the great thrill park names."
+    name: "Universal Islands of Adventure",
+    slug: "universal-islands-of-adventure",
+    location: "Florida, USA",
+    hero: "/assets/img/islands-of-adventure.jpg",
+    icon: "island",
+    summary: "Maps and guides from the park that brought comic book heroes and movie magic to life."
   },
   {
     name: "Alton Towers Resort",
