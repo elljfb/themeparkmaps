@@ -20,8 +20,8 @@
     "size": 646.1015625
   },
   "src\\assets\\img\\universal-trip-2002.jpg": {
-    "hash": "855491fe8f587dbc563c23e92e54e6a2",
-    "size": 383.4375
+    "hash": "a211dff0c9edd20f4c48b723acba8041",
+    "size": 360.6259765625
   },
   "src\\assets\\img\\maps\\disney-mgm-studios-2002.JPG": {
     "hash": "298452362f4b204226b55a3002c7fe14",
@@ -122,5 +122,37 @@
   "src\\assets\\img\\universal-studios.png": {
     "hash": "3fd6ea0bf92d1669de8ba8c349976edc",
     "size": 1868.765625
+  },
+  "src\\assets\\img\\maps\\bioparc_valencia_2025.png": {
+    "hash": "25a3acc1be5ca082b2d0b2a706b7b50a",
+    "size": 5134.5517578125
+  },
+  "src\\assets\\img\\maps\\epcot_2002.png": {
+    "hash": "6729f67c3185fcf8ddf2010a6ec1bcc2",
+    "size": 4272.6474609375
+  },
+  "src\\assets\\img\\maps\\magic_kingdom_brochure_2002.png": {
+    "hash": "ab0c013fd0cd4fb3cb18724b50c2a9bd",
+    "size": 5581.4462890625
+  },
+  "src\\assets\\img\\maps\\oceonografic_valencia_2025.png": {
+    "hash": "abdcd990946a46d6bdebd59d831ab6b8",
+    "size": 4524.744140625
+  },
+  "src\\assets\\img\\maps\\seaworld_orlando_map_2002.png": {
+    "hash": "11973c318ea1c09790fbaad4dc45194e",
+    "size": 4446.8955078125
+  },
+  "src\\assets\\img\\maps\\universal_islands_of_adventure_2002.png": {
+    "hash": "2e809fb3e7d5308f7fed90e13eabbecd",
+    "size": 5043.0791015625
+  },
+  "src\\assets\\img\\islands-of-adventure.jpg": {
+    "hash": "deb89eec597bd514dd3e258cdd9fc58f",
+    "size": 164.3447265625
+  },
+  "src\\assets\\img\\seaworld-orlando.jpg": {
+    "hash": "fc9d5b84887854695afca186df19ad74",
+    "size": 461.724609375
   }
 }
