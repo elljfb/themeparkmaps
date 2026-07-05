@@ -62,5 +62,13 @@ module.exports = [
     hero: "/assets/img/seaworld-orlando.jpg",
     icon: "anchor",
     summary: "Historic SeaWorld Orlando maps and guides."
+  },
+  {
+    name: "Sundown Adventureland",
+    slug: "sundown-adventureland",
+    location: "Nottinghamshire, England",
+    hero: "/assets/img/sundown-adventureland.jpg",
+    icon: "castle",
+    summary: "Children’s theme park maps and guides from Sundown Adventureland in Nottinghamshire."
   }
 ];
