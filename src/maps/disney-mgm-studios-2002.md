@@ -1,7 +1,7 @@
 ---
 layout: layouts/map.njk
 title: Disney MGM Studios Map 2002
-park: Walt Disney World Resort
+park: Disney MGM Studios
 parkSlug: walt-disney-world
 year: "2002"
 decade: "2000s"

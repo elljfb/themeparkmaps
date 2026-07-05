@@ -54,5 +54,13 @@ module.exports = [
     hero: "/assets/img/palma-aquarium.JPG",
     icon: "fish",
     summary: "Discover the marine wonders of Palma Aquarium through its detailed maps and guides."
+  },
+  {
+    name: "SeaWorld Orlando",
+    slug: "seaworld-orlando",
+    location: "Orlando, Florida, USA",
+    hero: "/assets/img/seaworld-orlando.jpg",
+    icon: "anchor",
+    summary: "Historic SeaWorld Orlando maps and guides."
   }
 ];
