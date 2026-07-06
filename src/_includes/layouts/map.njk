@@ -34,7 +34,7 @@ layout: layouts/base.njk
       </a>
     </div>
     <div class="map-grid">
-      {% for map in collections.maps | limit(4) %}
+      {% for map in collections.maps | limit(6) %}
         {% if map.url != page.url %}
           <article class="map-card">
             <a href="{{ map.url }}">
