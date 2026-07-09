@@ -30,6 +30,33 @@ module.exports = function (eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("sitemapEntries", function (collectionApi) {
+    const pages = collectionApi.getAll().filter((page) => page.url && page.url !== "/");
+    const seen = new Set();
+    const entries = [];
+
+    pages.forEach((page) => {
+      if (!seen.has(page.url)) {
+        seen.add(page.url);
+        entries.push(page);
+      }
+    });
+
+    const parksData = require("./src/_data/parks-base.js");
+    parksData.forEach((park) => {
+      const url = `/parks/${park.slug}/`;
+      if (!seen.has(url)) {
+        seen.add(url);
+        entries.push({
+          url,
+          data: { eleventyExcludeFromCollections: false }
+        });
+      }
+    });
+
+    return entries;
+  });
+
   eleventyConfig.addCollection("parks", function (collectionApi) {
     const maps = collectionApi.getFilteredByGlob("./src/maps/*.md");
     const parksData = require("./src/_data/parks-base.js");

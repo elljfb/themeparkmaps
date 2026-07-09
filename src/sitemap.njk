@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-  {%- for page in collections.all %}
+  {%- for page in collections.sitemapEntries %}
     {%- if not page.data.eleventyExcludeFromCollections and page.url and page.url !== '/' %}
   <url>
     <loc>{{ site.url }}{{ page.url }}</loc>
