@@ -59,4 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Hero showcase year switcher
+  const yearSwitcher = document.querySelector("[data-hero-year-switcher]");
+  const heroMapImage = document.getElementById("hero-map-image");
+
+  if (yearSwitcher && heroMapImage) {
+    const yearLinks = yearSwitcher.querySelectorAll("a");
+    yearLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        yearLinks.forEach((l) => l.classList.remove("is-selected"));
+        
+        // Add active class to clicked link
+        link.classList.add("is-selected");
+        
+        // Update image source and alt text
+        const src = link.dataset.src;
+        const alt = link.dataset.alt;
+        if (src) heroMapImage.src = src;
+        if (alt) heroMapImage.alt = alt;
+      });
+    });
+  }
 });

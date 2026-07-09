@@ -25,7 +25,7 @@ description: Browse theme park map collections by destination.
     <div class="park-directory-grid" data-filter-list>
       {% for park in collections.parks %}
         <article class="park-directory-card" id="{{ park.slug }}" data-filter-item="{{ park.name }} {{ park.slug }} {{ park.location }} {{ park.summary }}">
-          <a href="/maps/?q={{ park.slug }}">
+          <a href="/parks/{{ park.slug }}/">
             <div class="park-card-image-wrapper">
               <img src="{{ park.hero }}" alt="{{ park.name }} image">
               <span class="park-card-count">{{ park.count }} map{% if park.count != 1 %}s{% endif %}</span>

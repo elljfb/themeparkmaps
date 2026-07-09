@@ -18,13 +18,11 @@ title: Home
     </div>
     <div class="hero-showcase" aria-label="Featured illustrated map">
       <div class="hero-card">
-        <img src="/assets/img/maps/universal-studios-2002.JPG" alt="Illustrated theme park map showing rides, rollercoasters and paths">
-        <div class="year-switcher" aria-label="Browse map years">
-          <a href="/years/#1980s">1985</a>
-          <a href="/years/#1990s">1995</a>
-          <a class="is-selected" href="/years/#2000s">2002</a>
-          <a href="/years/#2010s">2015</a>
-          <a href="/years/#2020s">2024</a>
+        <img id="hero-map-image" src="/assets/img/maps/magic_kingdom_brochure_2002.png" alt="Magic Kingdom Map 2002">
+        <div class="year-switcher" aria-label="Browse map years" data-hero-year-switcher>
+          <a href="#" data-src="/assets/img/maps/magic_kingdom_map_1986.jpg" data-alt="Magic Kingdom Map 1986">1986</a>
+          <a href="#" class="is-selected" data-src="/assets/img/maps/magic_kingdom_brochure_2002.png" data-alt="Magic Kingdom Map 2002">2002</a>
+          <a href="#" data-src="/assets/img/maps/magic_kingdom_map_2015.png" data-alt="Magic Kingdom Map 2015">2015</a>
         </div>
       </div>
     </div>
@@ -39,13 +37,15 @@ title: Home
     {% include "section-header.njk" %}
     <div class="park-grid">
       {% for park in collections.parks %}
-        <article class="park-card">
-          <a href="/parks/{{ park.slug }}">
-            <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
-            <h3>{{ park.name }}</h3>
-            <p>{{ park.count }} maps</p>
-          </a>
-        </article>
+        {% if park.count > 0 %}
+          <article class="park-card">
+            <a href="/parks/{{ park.slug }}">
+              <img src="{{ park.hero }}" alt="{{ park.name }} placeholder image">
+              <h3>{{ park.name }}</h3>
+              <p>{{ park.count }} maps</p>
+            </a>
+          </article>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

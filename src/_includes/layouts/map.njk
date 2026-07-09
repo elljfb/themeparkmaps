@@ -9,7 +9,7 @@ layout: layouts/base.njk
         <span class="eyebrow">{{ tag }}</span>
       {% endif %}
       <h1>{{ title }}</h1>
-      <p class="blog-post-meta">Park: <a href="/parks/#{{ parkSlug }}">{{ park }}</a> &middot; Year: {{ year }}</p>
+      <p class="blog-post-meta">Park: <a href="/parks/{{ parkSlug }}/">{{ park }}</a> &middot; Year: {{ year }}</p>
     </div>
   </header>
   
@@ -37,17 +37,17 @@ layout: layouts/base.njk
       {% for map in collections.maps | limit(6) %}
         {% if map.url != page.url %}
           <article class="map-card">
-            <a href="{{ map.url }}">
-              <div class="map-card-image-wrapper">
+            <div class="map-card-image-wrapper">
+              <a href="{{ map.url }}">
                 <img src="{{ map.data.image }}" alt="{{ map.data.title }} placeholder scan">
-                <span class="map-card-year">{{ map.data.year }}</span>
-              </div>
-              <div class="map-card-content">
-                <span class="eyebrow">{{ map.data.tag }}</span>
-                <h3>{{ map.data.title }}</h3>
-                <p>{{ map.data.park }}</p>
-              </div>
-            </a>
+              </a>
+              <span class="map-card-year">{{ map.data.year }}</span>
+            </div>
+            <div class="map-card-content">
+              <span class="eyebrow">{{ map.data.tag }}</span>
+              <h3><a href="{{ map.url }}">{{ map.data.title }}</a></h3>
+              <p><a href="/parks/{{ map.data.parkSlug }}/" class="park-link">{{ map.data.park }}</a></p>
+            </div>
           </article>
         {% endif %}
       {% endfor %}

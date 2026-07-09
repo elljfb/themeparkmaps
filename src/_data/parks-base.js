@@ -40,14 +40,6 @@ module.exports = [
     summary: "UK park maps across the haunted, whimsical, and very twisty decades."
   },
   {
-    name: "Jurassic Park",
-    slug: "jurassic-park",
-    location: "Isla Nublar, Costa Rica",
-    hero: "/assets/img/jurassic-park.webp",
-    icon: "dinosaurs",
-    summary: "Explore the prehistoric world of Jurassic Park through its evolving maps and guides."
-  },
-  {
     name: "Palma Aquarium",
     slug: "palma-aquarium",
     location: "Palma, Spain",
@@ -70,5 +62,21 @@ module.exports = [
     hero: "/assets/img/sundown-adventureland.jpg",
     icon: "castle",
     summary: "Children’s theme park maps and guides from Sundown Adventureland in Nottinghamshire."
+  },
+  {
+    name: "Parc Saint Paul",
+    slug: "parc-saint-paul",
+    location: "Saint-Paul, France",
+    hero: "/assets/img/parc-saint-paul.png",
+    icon: "castle",
+    summary: "A charming family amusement park in northern France, featuring unique roller coasters, family-friendly attractions, and live entertainment."
+  },
+  {
+    name: "Walibi Belgium",
+    slug: "walibi-belgium",
+    location: "Wavre, Belgium",
+    hero: "/assets/img/walibi-belgium.png",
+    icon: "globe",
+    summary: "One of Belgium's premier theme parks, famous for its thrilling roller coasters, family-friendly attractions, and vibrant atmosphere."
   }
 ];
