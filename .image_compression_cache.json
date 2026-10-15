@@ -156,12 +156,12 @@
     "size": 461.724609375
   },
   "src\\assets\\img\\maps\\sundown_adventureland_front_2026.jpg": {
-    "hash": "1a9d72e2a0fb155ca106ea4edc9c0117",
-    "size": 509.4873046875
+    "hash": "27604e9baf542f5254a626e2a156f30d",
+    "size": 509.18359375
   },
   "src\\assets\\img\\maps\\sundown_adventureland_map_2026.jpg": {
-    "hash": "a0d95bcaa15d3e8d9bacabaf6b579ea3",
-    "size": 559.220703125
+    "hash": "0b988a3cba0bf3609d59ba61b3044d57",
+    "size": 558.88671875
   },
   "src\\assets\\img\\sundown-adventureland.jpg": {
     "hash": "27b4c58b9a89b591ed55f5debb8f9882",
@@ -202,5 +202,21 @@
   "src\\assets\\img\\maps\\walibi_belgium_map_2016.jpg": {
     "hash": "bbd5eafe03d33f7fa0d6dfed71f932df",
     "size": 535.1953125
+  },
+  "src\\assets\\img\\chinesetakaway.png": {
+    "hash": "e481b292bf33881c0280afc71412db3e",
+    "size": 1482.5810546875
+  },
+  "src\\assets\\img\\twinlakes.jpg": {
+    "hash": "4072233c37750c2fb2c0390f05a5f373",
+    "size": 507.5126953125
+  },
+  "src\\assets\\img\\wheelgate.jpg": {
+    "hash": "bea6de1cf614e0c07ff7d225c0f90fc9",
+    "size": 424.84375
+  },
+  "src\\assets\\img\\maps\\twin_lakes_map_2026.png": {
+    "hash": "e8e4ad3fb1f36cb55c30a138998c3348",
+    "size": 5018.6650390625
   }
 }

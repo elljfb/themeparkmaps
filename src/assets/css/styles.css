@@ -413,6 +413,27 @@ button {
   padding: 24px 0;
 }
 
+.homepage-ad-label {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.homepage-ad a,
+.homepage-ad img {
+  display: block;
+}
+
+.homepage-ad img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
 .section-header {
   display: flex;
   align-items: center;

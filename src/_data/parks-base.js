@@ -78,5 +78,21 @@ module.exports = [
     hero: "/assets/img/walibi-belgium.png",
     icon: "globe",
     summary: "One of Belgium's premier theme parks, famous for its thrilling roller coasters, family-friendly attractions, and vibrant atmosphere."
+  },
+  {
+    name: "Wheelgate Park",
+    slug: "wheelgate",
+    location: "Nottinghamshire, England",
+    hero: "/assets/img/wheelgate.jpg",
+    icon: "castle",
+    summary: "Explore maps and guides from Wheelgate Park, a family theme park in Nottinghamshire."
+  },
+  {
+    name: "Twinlakes Park",
+    slug: "twinlakes",
+    location: "Melton Mowbray, Leicestershire, England",
+    hero: "/assets/img/twinlakes.jpg",
+    icon: "castle",
+    summary: "Explore maps and guides from Twinlakes Park, a family theme park in Leicestershire."
   }
 ];
